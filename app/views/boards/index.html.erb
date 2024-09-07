@@ -1,28 +1,30 @@
 <div class="container">
-  <div class="tabs">
-    <div class="tabs_item active">
-      新着記事一覧
-    </div>
-    <div class="tabs_item">
-      タイムライン
-    </div>
-  </div>
-  <div class="card">
-    <div class="card_image">
-
-    </div>
-    <div class="card_content">
-      <div class="card_heart">
-      
-        <span>23</span>
+  <h2>All Boards</h2>
+  <div class="board">
+    <div class="board_head">
+      <div class="board_title">
+        <%= @task.title %>
       </div>
-      <div class="card_detail">
+      <div class="board_actions">
+        <div class="dropdown">
+          <%= image_tag 'actions.svg' %>
+          <div class="dropdown-content mini">
+            <a href="">Edit</a>
+            <a href="">Delete</a>
+          </div><!-- /.dropdown-content -->
+        </div><!-- /.dropdown -->
+      </div>
+    </div>
+    <div class="board_body">
+      <div class="board_content">
+        <%= @task.content %>
+      </div>
+      <div class="board_icon">
         <%= image_tag 'default-avatar.png' %>
-        <div>
-          <p>cohki0305</p>
-          <p>2020/4/16</p>
-        </div>
       </div>
     </div>
   </div>
+  <a href="" class="board_new">
+    <p>+ Add new borad</p>
+  </a><!-- /.board_new -->
 </div>
