@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'header';
-@import 'card';
+@import 'common';
+@import 'board';
 
 html {
   word-spacing: 1px;
@@ -27,6 +28,6 @@ body {
 }
 
 .container {
-  padding: 16px 16px;
+  padding: 30px 30px;
   width: 100%;
 }
