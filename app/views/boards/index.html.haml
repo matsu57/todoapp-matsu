@@ -1,0 +1,22 @@
+.container
+  %h2 All Boards
+  .board
+    .board_head
+      .board_title
+        = @task.title
+      .board_actions
+        .dropdown
+          = image_tag 'actions.svg'
+          .dropdown-content.mini
+            %a{:href => ""} Edit
+            %a{:href => ""} Delete
+          / /.dropdown-content
+        / /.dropdown
+    .board_body
+      .board_content
+        = @task.content
+      .board_icon
+        = image_tag 'default-avatar.png'
+  %a.board_new{:href => ""}
+    %p + Add new borad
+  / /.board_new
