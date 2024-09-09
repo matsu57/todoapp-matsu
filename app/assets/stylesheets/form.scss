@@ -1,0 +1,30 @@
+input, select {
+  border-radius: 10px;
+  background: #F4F4F4;
+  border: none;
+
+  &.text {
+    width: 100%;
+    margin: 4px 0px;
+    padding: 16px 24px;
+  }
+}
+
+label {
+  display: inline-block;
+  margin-top: 33px;
+  font-size: 18px;
+
+  &.margin {
+    margin-top: 16px;
+  }
+}
+
+textarea {
+  width: 100%;
+  margin: 8px 0px;
+  padding: 8px 8px;
+  min-height: 440px;
+  resize: vertical;
+  border: 1px solid #EBEBEB;
+}
