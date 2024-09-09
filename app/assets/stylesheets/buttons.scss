@@ -1,9 +1,14 @@
 @import './variables';
 
 .btn-primary {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+
   background-color: $primary-color;
   border: none;
-  width: 100%;
+  width: calc(100% - 30px * 2);
   text-align: center;
   color: white;
   padding: 16px 0;

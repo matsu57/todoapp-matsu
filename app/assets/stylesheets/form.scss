@@ -1,14 +1,20 @@
 input, select {
   &.text {
     width: 100%;
-    margin: 8px 0px;
+    margin: 4px 0px;
     padding: 16px 24px;
     border: 1px solid #EBEBEB;
   }
 }
 
 label {
-  font-size: 12px;
+  display: inline-block;
+  margin-top: 33px;
+  font-size: 18px;
+
+  &.margin {
+    margin-top: 16px;
+  }
 }
 
 textarea {

@@ -14,9 +14,8 @@
       %br/
       = f.password_field :password, autocomplete: "new-password", class: 'text'
     .field
-      = f.label :password_confirmation
+      = f.label :password_confirmation, class: 'margin'
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
     .actions
-      = f.submit "Sign up", class: 'btn-primary'
-  = render "devise/shared/links"
+      = f.submit "Submit", class: 'btn-primary'
