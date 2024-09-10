@@ -1,0 +1,20 @@
+.container
+  %h2
+    = @board.title
+  .card
+    .card_head
+      .card_title
+        タスクタイトル
+      .card_actions
+        .dropdown
+          = image_tag 'actions.svg'
+          .dropdown-content.mini
+            %a{:href => ""} Edit
+            %a{:href => ""} Delete
+    .card_body
+      .card_content
+        タスクの内容
+      .card_icon
+        = image_tag 'default-avatar.png'
+  %a.card_new{:href => ""}
+    %p + Add new card

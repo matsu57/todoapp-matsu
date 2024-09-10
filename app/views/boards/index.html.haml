@@ -1,23 +1,24 @@
 .container
   %h2 All Boards
   - @boards.each do |board|
-    .board
-      .board_head
-        .board_title
-          = board.title
-        .board_actions
-          .dropdown
-            = image_tag 'actions.svg'
-            .dropdown-content.mini
-              %a{:href => ""} Edit
-              %a{:href => ""} Delete
-            / /.dropdown-content
-          / /.dropdown
-      .board_body
-        .board_content
-          = board.content
-        .board_icon
-          = image_tag 'default-avatar.png'
-  %a.board_new{:href => ""}
-    %p + Add new borad
-  / /.board_new
+    = link_to board_path(board) do
+      .board
+        .board_head
+          .board_title
+            = board.title
+          .board_actions
+            .dropdown
+              = image_tag 'actions.svg'
+              .dropdown-content.mini
+                = link_to root_path do
+                  Edit
+                = link_to root_path do
+                  Delete
+        .board_body
+          .board_content
+            = board.content
+          .board_icon
+            = image_tag 'default-avatar.png'
+  = link_to root_path do
+    .board_new
+      %p + Add new board
