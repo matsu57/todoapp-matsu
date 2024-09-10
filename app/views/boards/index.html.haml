@@ -1,24 +1,23 @@
 .container
   %h2 All Boards
   - @boards.each do |board|
-    = link_to board_path(board) do
-      .board
-        .board_head
+    .board
+      = link_to board_path(board) do
+        .board_body
           .board_title
             = board.title
-          .board_actions
-            .dropdown
-              = image_tag 'actions.svg'
-              .dropdown-content.mini
-                = link_to root_path do
-                  Edit
-                = link_to root_path do
-                  Delete
-        .board_body
           .board_content
             = board.content
           .board_icon
             = image_tag 'default-avatar.png'
+      .board_actions
+        .dropdown
+          = image_tag 'actions.svg'
+          .dropdown-content.mini
+            = link_to root_path do
+              Edit
+            = link_to root_path do
+              Delete
   = link_to root_path do
     .board_new
       %p + Add new board

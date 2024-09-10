@@ -10,17 +10,13 @@ $avatar-size: 32px;
   background: #F4F4F4;
   border-radius: 10px;
   cursor: pointer;
-
-  &_head {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &_title {
-  }
+  display: flex;
+  justify-content: space-between;
 
   &_body {
-
+    
+  }
+  &_title {
   }
   &_content {
     padding-top: 6px;
@@ -40,6 +36,10 @@ $avatar-size: 32px;
       border-radius: 100%;
       margin-right: 8px;
     }
+  }
+
+  &_actions {
+    
   }
 
   &_new {
