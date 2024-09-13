@@ -6,21 +6,23 @@
   left: 50%;
   transform: translateX(-50%);
 
+  border-radius: 4px;
   background-color: $primary-color;
   border: none;
   width: calc(100% - 30px * 2);
   text-align: center;
   color: white;
-  padding: 16px 0;
+  padding: 8px 0;
   font-weight: bold;
 }
 
 .btn-secondary {
+  border-radius: 4px;
   background-color: white;
   border: solid 1px $primary-color;
   width: 100%;
   text-align: center;
   color: $primary-color;
-  padding: 16px 0;
+  padding: 8px 0;
   font-weight: bold;
 }
