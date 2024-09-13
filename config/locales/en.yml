@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      board:
+        title: 'Name'
+        content: 'Description'
