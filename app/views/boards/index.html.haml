@@ -14,10 +14,8 @@
         .dropdown
           = image_tag 'actions.svg'
           .dropdown-content.mini
-            = link_to root_path do
-              Edit
-            = link_to root_path do
-              Delete
+            = link_to 'Edit', edit_board_path(board)
+            = link_to 'Delete', root_path
   = link_to new_board_path do
     .board_new
       %p + Add new board
