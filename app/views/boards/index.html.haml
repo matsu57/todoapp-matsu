@@ -10,12 +10,13 @@
             = board.content
           .board_icon
             = image_tag 'default-avatar.png'
-      .board_actions
-        .dropdown
-          = image_tag 'actions.svg'
-          .dropdown-content.mini
-            = link_to 'Edit', edit_board_path(board)
-            = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
+      - if user_signed_in? && current_user.has_created?(board)
+        .board_actions
+          .dropdown
+            = image_tag 'actions.svg'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
   = link_to new_board_path do
     .board_new
       %p + Add new board
