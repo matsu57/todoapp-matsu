@@ -5,9 +5,9 @@
       = link_to board_path(board) do
         .board_body
           .board_title
-            = board.title
+            %p= board.title
           .board_content
-            = board.content
+            %p= board.content
           .board_icon
             = image_tag 'default-avatar.png'
       - if user_signed_in? && current_user.has_created?(board)
