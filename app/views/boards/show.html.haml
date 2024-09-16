@@ -15,5 +15,6 @@
         .dropdown-content.mini
           %a{:href => ""} Edit
           %a{:href => ""} Delete
-  %a.card_new{:href => ""}
-    %p + Add new card
+  = link_to new_board_task_path(@board) do
+    .card_new
+      %p + Add new card
