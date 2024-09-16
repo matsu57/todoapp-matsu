@@ -1,0 +1,16 @@
+.container
+  .card_detail
+    %h2= @task.title
+    .card_actions
+      .dropdown
+        = image_tag 'actions.svg'
+        .dropdown-content.mini
+          %a{:href => ""} Edit
+          %a{:href => ""} Delete
+
+  .card
+    .card_body
+      .card_content
+        %p タスクの詳細
+      .card_icon
+        = image_tag 'default-avatar.png'

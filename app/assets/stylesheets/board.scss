@@ -14,8 +14,11 @@ $avatar-size: 32px;
   justify-content: space-between;
   gap: 10px;
 
-  &_body {
+  a {
     width: 100%;
+  }
+
+  &_body {
   }
   &_title {
   }
