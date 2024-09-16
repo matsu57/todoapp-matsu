@@ -12,9 +12,10 @@ $avatar-size: 32px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   &_body {
-    
+    width: 100%;
   }
   &_title {
   }

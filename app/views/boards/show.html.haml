@@ -1,19 +1,20 @@
 .container
-  %h2
-    = @board.title
-  .card
-    .card_body
-      .card_title
-        タスクタイトル
-      .card_content
-        タスクの内容
-      .card_icon
-        = image_tag 'default-avatar.png'
-    .card_actions
-      .dropdown
-        = image_tag 'actions.svg'
-        .dropdown-content.mini
-          %a{:href => ""} Edit
-          %a{:href => ""} Delete
-  %a.card_new{:href => ""}
-    %p + Add new card
+  %h2= @board.title
+  - @tasks.each do |task|
+    .card
+      .card_body
+        .card_title
+          %p= task.title
+        .card_content
+          %p= task.content
+        .card_icon
+          = image_tag 'default-avatar.png'
+      .card_actions
+        .dropdown
+          = image_tag 'actions.svg'
+          .dropdown-content.mini
+            %a{:href => ""} Edit
+            %a{:href => ""} Delete
+  = link_to new_board_task_path(@board) do
+    .card_new
+      %p + Add new card
