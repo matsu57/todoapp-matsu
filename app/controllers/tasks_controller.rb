@@ -19,6 +19,20 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = current_user.tasks.find(params[:id])
+  end
+
+  def update
+    @task = current_user.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_task_path(@task), notice: 'タスクを更新しました'
+    else
+      flash.now[:error] = '更新に失敗しました'
+      render :edit
+    end
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :content).merge(user_id: current_user.id)
