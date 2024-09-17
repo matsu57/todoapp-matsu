@@ -1,0 +1,52 @@
+@import './variables';
+
+$avatar-size: 40px;
+
+.comment {
+  margin-top: 35px;
+
+  h3 {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 26px;
+  }
+
+  &_wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & + & {
+      margin-top: 35px;
+    }
+  }
+  &_icon {
+    cursor: pointer;
+    display: flex;
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+    }
+  }
+  &_content {
+    font-size: 14px;
+  }
+
+  &_new {
+    margin-top: 32px;
+    display: block;
+    padding: 20px 0 18px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px dashed rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    p {
+      color: $text-base-color;
+    }
+  }
+}
