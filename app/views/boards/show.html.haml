@@ -2,19 +2,20 @@
   %h2= @board.title
   - @tasks.each do |task|
     .card
-      .card_body
-        .card_title
-          %p= task.title
-        .card_content
-          %p= task.content
-        .card_icon
-          = image_tag 'default-avatar.png'
-      .card_actions
-        .dropdown
-          = image_tag 'actions.svg'
-          .dropdown-content.mini
-            %a{:href => ""} Edit
-            %a{:href => ""} Delete
+      = link_to board_task_path(board_id: @board, id: task) do
+        .card_body
+          .card_title
+            %p= task.title
+          .card_content
+            %p= task.content
+          .card_icon
+            = image_tag 'default-avatar.png'
+        .card_actions
+          .dropdown
+            = image_tag 'actions.svg'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_task_path(board_id: @board, id: task)
+              %a{:href => ""} Delete
   = link_to new_board_task_path(@board) do
     .card_new
       %p + Add new card

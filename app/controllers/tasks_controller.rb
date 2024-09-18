@@ -1,4 +1,8 @@
 class TasksController < ApplicationController
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
     board = Board.find(params[:board_id])
     @task = board.tasks.build
@@ -12,6 +16,22 @@ class TasksController < ApplicationController
     else
       flash.now[:error] = 'タスクの保存に失敗しました'
       render :new
+    end
+  end
+
+  def edit
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_task_path(@task), notice: 'タスクを更新しました'
+    else
+      flash.now[:error] = 'タスクの更新に失敗しました'
+      render :edit
     end
   end
 

@@ -1,0 +1,26 @@
+.container
+  .card_detail
+    .card_detail_head
+      %h2= @task.title
+      .card_actions
+        .dropdown
+          = image_tag 'actions.svg'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_board_task_path(@task)
+            -# %a{:href => ""} Delete
+
+    .card_detail_body
+      .card_image
+        = image_tag 'sample_img.png'
+      .card_detail_content
+        %p= @task.content
+
+  .comment
+    %h3 Comment
+    .comment_wrap
+      .comment_icon
+        = image_tag 'default-avatar.png'
+      .comment_content
+        %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
+    .comment_new
+      %p + Add new comment
