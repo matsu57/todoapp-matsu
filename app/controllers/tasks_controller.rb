@@ -6,15 +6,13 @@ class TasksController < ApplicationController
   end
 
   def new
-    board = Board.find(params[:board_id])
-    @task = board.tasks.build
+    @task = @board.tasks.build
   end
 
   def create
-    board = Board.find(params[:board_id])
-    @task = board.tasks.build(task_params)
+    @task = @board.tasks.build(task_params)
     if @task.save
-      redirect_to board_path(board), notice: 'タスクを追加しました'
+      redirect_to board_path(@board), notice: 'タスクを追加しました'
     else
       flash.now[:error] = 'タスクの保存に失敗しました'
       render :new
