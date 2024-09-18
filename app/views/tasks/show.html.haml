@@ -6,8 +6,8 @@
         .dropdown
           = image_tag 'actions.svg'
           .dropdown-content.mini
-            %a{:href => ""} Edit
-            %a{:href => ""} Delete
+            = link_to 'Edit', edit_board_task_path(@task)
+            -# %a{:href => ""} Delete
 
     .card_detail_body
       .card_image
