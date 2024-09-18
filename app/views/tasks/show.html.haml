@@ -17,10 +17,13 @@
 
   .comment
     %h3 Comment
-    .comment_wrap
-      .comment_icon
-        = image_tag 'default-avatar.png'
-      .comment_content
-        %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
-    .comment_new
-      %p + Add new comment
+    - @comments.each do |comment|
+      .comment_wrap
+        .comment_icon
+          = image_tag 'default-avatar.png'
+        .comment_content
+          %p=comment.content
+
+    = link_to new_board_task_comment_path(@task.board, @task) do
+      .comment_new
+        %p + Add new comment
