@@ -30,4 +30,12 @@ class User < ApplicationRecord
   def has_created?(board)
     boards.exists?(id: board.id)
   end
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+  def display_name
+    profile&.name || self.email.split('@').first
+  end
 end
