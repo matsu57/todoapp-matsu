@@ -9,7 +9,7 @@
           .board_content
             %p= board.content
           .board_icon
-            = image_tag 'default-avatar.png'
+            = image_tag board.user.avatar_image
       - if user_signed_in? && current_user.has_created?(board)
         .board_actions
           .dropdown

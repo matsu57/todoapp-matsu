@@ -14,7 +14,7 @@
       = link_to root_path do
         %p.header_pageTitle Boards
       .dropdown
-        = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
+        = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
         .dropdown-content
           = link_to 'Profile', profile_path
           %a{:href => "#"} ログアウト

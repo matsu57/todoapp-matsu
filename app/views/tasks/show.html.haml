@@ -20,7 +20,7 @@
     - @comments.each do |comment|
       .comment_wrap
         .comment_icon
-          = image_tag 'default-avatar.png'
+          = image_tag comment.user.avatar_image
         .comment_content
           %p=comment.content
 

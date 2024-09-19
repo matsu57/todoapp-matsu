@@ -9,7 +9,7 @@
           .card_content
             %p= task.content
           .card_icon
-            = image_tag 'default-avatar.png'
+            = image_tag task.user.avatar_image
         .card_actions
           .dropdown
             = image_tag 'actions.svg'
