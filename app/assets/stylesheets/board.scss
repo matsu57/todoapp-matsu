@@ -19,26 +19,52 @@ $avatar-size: 32px;
   }
 
   &_body {
+    position: relative;
   }
   &_title {
   }
   &_content {
     padding-top: 6px;
+    padding-bottom: 29px;
     font-size: 14px;
     opacity: 0.4;
   }
 
   &_icon {
-    padding-top: 29px;
     cursor: pointer;
     display: flex;
     font-size: 10px;
+    
+    ul {
+      padding-left: 0;
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+      &:not(:first-child) {
+        margin-left: -20px;
+      }
+    }
 
     img {
       width: $avatar-size;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+    }
+  }
+
+  &_comment-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    span {
+      color: #000;
+      font-size: 14px;
+      opacity: 0.2;
     }
   }
 
