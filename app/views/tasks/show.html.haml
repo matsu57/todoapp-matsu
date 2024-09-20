@@ -2,12 +2,13 @@
   .card_detail
     .card_detail_head
       %h2= @task.title
-      .card_actions
-        .dropdown
-          = image_tag 'actions.svg'
-          .dropdown-content.mini
-            = link_to 'Edit', edit_board_task_path(@board, @task)
-            = link_to 'Delete', board_task_path(@board, @task), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
+      - if user_signed_in? && current_user.has_created?(@task)
+        .card_actions
+          .dropdown
+            = image_tag 'actions.svg'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_task_path(@board, @task)
+              = link_to 'Delete', board_task_path(@board, @task), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
 
     .card_detail_body
       .card_image
@@ -23,7 +24,7 @@
           = image_tag comment.user.avatar_image
         .comment_content
           %p=comment.content
-
-    = link_to new_board_task_comment_path(@task.board, @task) do
-      .comment_new
-        %p + Add new comment
+    - if user_signed_in?
+      = link_to new_board_task_comment_path(@task.board, @task) do
+        .comment_new
+          %p + Add new comment
