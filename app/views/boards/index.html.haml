@@ -9,7 +9,7 @@
           .board_content
             %p= board.content
           .board_icon
-            = image_tag 'default-avatar.png'
+            = image_tag board.user.avatar_image
       - if user_signed_in? && current_user.has_created?(board)
         .board_actions
           .dropdown
@@ -17,6 +17,8 @@
             .dropdown-content.mini
               = link_to 'Edit', edit_board_path(board)
               = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
-  = link_to new_board_path do
-    .board_new
-      %p + Add new board
+
+  - if user_signed_in?
+    = link_to new_board_path do
+      .board_new
+        %p + Add new board

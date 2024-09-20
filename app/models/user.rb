@@ -25,8 +25,32 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
-  def has_created?(board)
-    boards.exists?(id: board.id)
+  def has_created?(record)
+    case record
+    when Board
+      boards.exists?(id: record.id)
+    when Task
+      tasks.exists?(id: record.id)
+    else
+      raise ArgumentError, "Unsupported record type: #{record.class}"
+    end
+  end
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+  def display_name
+    profile&.name || self.email.split('@').first
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'default-avatar.png'
+    end
   end
 end

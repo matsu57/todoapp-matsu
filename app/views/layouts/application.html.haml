@@ -13,11 +13,16 @@
     %header.header
       = link_to root_path do
         %p.header_pageTitle Boards
-      .dropdown
-        = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
-        .dropdown-content
-          %a{:href => "#"} プロフィール
-          %a{:href => "#"} ログアウト
+        .dropdown
+          = image_tag user_signed_in? ? current_user.avatar_image : 'default-avatar.png', class: 'header_avatar dropbtn'
+          .dropdown-content
+            - if user_signed_in?
+              = link_to 'Profile', profile_path
+              = link_to 'Log out', destroy_user_session_path, method: :delete
+            - else
+              = link_to 'Sign up', new_user_registration_path
+              = link_to 'Log in', new_user_session_path
+
     - if flash.present?
       .flash
         - flash.each do |key, value|
