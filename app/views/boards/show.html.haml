@@ -13,6 +13,9 @@
             %p= task.content
           .card_icon
             = image_tag task.user.avatar_image
+          .card_comment-count
+            %span= task.comment_count
+            = image_tag 'message.svg'
         - if user_signed_in? && current_user.has_created?(task)
           .card_actions
             .dropdown
