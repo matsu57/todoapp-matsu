@@ -19,6 +19,7 @@ $avatar-size: 32px;
   }
 
   &_body {
+    position: relative;
   }
   &_title {
   }
@@ -39,6 +40,19 @@ $avatar-size: 32px;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+    }
+  }
+
+  &_comment-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    span {
+      color: #000;
+      font-size: 14px;
+      opacity: 0.2;
     }
   }
 
