@@ -11,11 +11,13 @@
             %p= task.title
           .card_content
             %p= task.content
-          - if task.comments.any?
-            %ul.card_icon
-              - task.comments.map(&:user).uniq.each do |commenter|
-                %li
-                  =image_tag commenter.avatar_image
+          .card_icon
+            %ul
+              = image_tag task.user.avatar_image
+              - if @commenters[task.id].any?
+                - @commenters[task.id].each do |commenter|
+                  %li
+                    = image_tag commenter.avatar_image
           .card_comment-count
             %span= task.comment_count
             = image_tag 'message.svg'
