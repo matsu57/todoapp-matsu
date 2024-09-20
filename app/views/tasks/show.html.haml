@@ -11,8 +11,9 @@
               = link_to 'Delete', board_task_path(@board, @task), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
 
     .card_detail_body
-      .card_image
-        = image_tag 'sample_img.png'
+      - if @task.eyecatch.attached?
+        .card_image
+          = image_tag @task.eyecatch
       .card_detail_content
         %p= @task.content
 
