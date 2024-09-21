@@ -36,3 +36,6 @@ en:
       board:
         title: 'Name'
         content: 'Description'
+      task:
+        title: 'Name'
+        content: 'Description'

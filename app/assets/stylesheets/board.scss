@@ -6,7 +6,7 @@ $avatar-size: 32px;
 .card,
 .board {
   margin: 16px 0;
-  padding: 32px 17px 22px;
+  padding: 20px 17px 20px;
   background: #F4F4F4;
   border-radius: 10px;
   cursor: pointer;
@@ -22,6 +22,7 @@ $avatar-size: 32px;
     position: relative;
   }
   &_title {
+    padding-top: 12px;
   }
   &_content {
     padding-top: 6px;
@@ -87,7 +88,7 @@ $avatar-size: 32px;
   }
 
   &_image {
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     height: 170px;
     position: relative;
     overflow: hidden;

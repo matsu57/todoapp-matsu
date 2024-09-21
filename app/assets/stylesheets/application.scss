@@ -32,6 +32,11 @@ body {
   color: $text-base-color;
 }
 
+a, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   padding: 30px 30px;
   width: 100%;

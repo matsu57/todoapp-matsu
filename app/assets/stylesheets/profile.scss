@@ -12,8 +12,9 @@ $image_size: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-
+      
       img {
+        border-radius: 100%;
         width: $image_size;
         height: $image_size;
       }
