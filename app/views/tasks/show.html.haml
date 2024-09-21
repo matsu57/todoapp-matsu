@@ -16,6 +16,11 @@
           = image_tag @task.eyecatch
       .card_detail_content
         %p= @task.content
+      - if @task.deadline.present?
+        .card_detail_deadline
+          %p Deadline :
+          %time{datetime: @task.deadline.iso8601}
+            = @task.deadline.strftime("%Y/%m/%d")
 
   .comment
     %h3 Comment

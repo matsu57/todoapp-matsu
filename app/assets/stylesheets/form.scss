@@ -8,6 +8,12 @@ input, select {
     margin: 4px 0px;
     padding: 16px 24px;
   }
+
+  &.image_file {
+    border-radius: 0;
+    margin: 4px 0px;
+    padding: 16px 24px;
+  }
 }
 
 label {
@@ -29,4 +35,8 @@ textarea {
   padding: 16px 24px;
   min-height: 203px;
   resize: vertical;
+}
+
+form {
+  margin-bottom: 100px;
 }

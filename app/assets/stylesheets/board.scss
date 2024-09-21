@@ -129,6 +129,12 @@ $avatar-size: 32px;
       border-radius: 10px;
       background: #F4F4F4;
     }
+
+    &_deadline {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
   }
 
 }
