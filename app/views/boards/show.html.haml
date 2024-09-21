@@ -21,13 +21,7 @@
           .card_comment-count
             %span= task.comment_count
             = image_tag 'message.svg'
-        - if user_signed_in? && current_user.has_created?(task)
-          .card_actions
-            .dropdown
-              = image_tag 'actions.svg'
-              .dropdown-content.mini
-                = link_to 'Edit', edit_board_task_path(@board, task)
-                = link_to 'Delete', board_task_path(@board, task), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
+
   - if user_signed_in?
     = link_to new_board_task_path(@board) do
       .card_new
