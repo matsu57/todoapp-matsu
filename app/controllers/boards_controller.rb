@@ -6,9 +6,6 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
-    @tasks = @board.tasks.includes(:user, comments: :user)
-    @commenters = create_commenters_list(@tasks)
   end
 
   def new
@@ -48,11 +45,5 @@ class BoardsController < ApplicationController
   private
   def board_params
     params.require(:board).permit(:title, :content)
-  end
-
-  def create_commenters_list(tasks)
-    tasks.each_with_object({}) do |task, hash|
-      hash[task.id] = task.comments.map(&:user).uniq - [task.user]
-    end
   end
 end
