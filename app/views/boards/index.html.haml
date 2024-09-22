@@ -2,7 +2,7 @@
   %h2 All Boards
   - @boards.each do |board|
     .board
-      = link_to board_tasks_path(board) do
+      = link_to board_path(board) do
         .board_body
           .board_title
             %p= board.title
