@@ -43,3 +43,5 @@ yarn-debug.log*
 !.vscode/extensions.json
 *.code-workspace
 
+# .env
+.env
