@@ -1,0 +1,7 @@
+.container
+  %h2= @board.title
+
+  - if user_signed_in?
+    = link_to new_board_task_path(@board) do
+      .card_new
+        %p + Add new card
