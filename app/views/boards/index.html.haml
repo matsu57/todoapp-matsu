@@ -2,22 +2,21 @@
   %h2 All Boards
   - @boards.each do |board|
     .board
-      - if board.tasks.any?
-        = link_to(board.tasks.any? ? board_tasks_path(board) : board_path(board)) do
-          .board_body
-            .board_title
-              %p= board.title
-            .board_content
-              %p= board.content
-            .board_icon
-              = image_tag board.user.avatar_image
-        - if user_signed_in? && current_user.has_created?(board)
-          .board_actions
-            .dropdown
-              = image_tag 'actions.svg'
-              .dropdown-content.mini
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
+      = link_to board_path(board) do
+        .board_body
+          .board_title
+            %p= board.title
+          .board_content
+            %p= board.content
+          .board_icon
+            = image_tag board.user.avatar_image
+      - if user_signed_in? && current_user.has_created?(board)
+        .board_actions
+          .dropdown
+            = image_tag 'actions.svg'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除してもよろしいですか?'}
 
   - if user_signed_in?
     = link_to new_board_path do
